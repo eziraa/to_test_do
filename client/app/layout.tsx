@@ -1,17 +1,16 @@
+import { Inter as FontSans } from "next/font/google"
+import { cn } from "@/lib/utils";
+import './globals.css';
+import { Toaster } from "react-hot-toast";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/providers/providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = FontSans({
   subsets: ["latin"],
-});
+  variable: "--font-sans",
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Todo App",
@@ -26,8 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+className={cn(
+  "min-h-screen font-sans antialiased",
+  fontSans.variable
+)}      >
+        <Toaster position="top-right" />
         <Provider>
           {children}
         </Provider>
