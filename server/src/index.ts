@@ -1,12 +1,21 @@
-import express from 'express';
+import 'dotenv/config';
+import { connectToMongoDB } from './db.connection';
+import { createApp } from './app';
 
-const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
+async function startServer() {
+  try {
+    await connectToMongoDB();
+    const app = createApp();
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}...`);
+    });
+  } catch (error) {
+    console.error('Failed to start the server:', error);
+    process.exit(1);
+  }
+}
+
+startServer();
