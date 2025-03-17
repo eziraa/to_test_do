@@ -25,8 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+      style={{
+        backgroundColor: "#f9fafb !important",
+      }}
 className={cn(
-  "min-h-screen font-sans antialiased",
+  "min-h-screen font-sans bg-white antialiased",
   fontSans.variable
 )}      >
         <Toaster position="top-right" />
