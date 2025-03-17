@@ -7,23 +7,23 @@ export class ToDosService {
     //Getting all ToDos
     static async findAllToDos(query: ITodoQuery) {
     const { search, limit, page } = query;
-    const filterObj: Record<string, any> = {};
+    const filterBy: Record<string, any> = {};
 
     if (search) {
-      filterObj.$or = [
+      filterBy.$or = [
         { title: { $regex: search, $options: 'i' } },
         { description: { $regex: search, $options: 'i' } },
       ];
     }
 
     // pagination
-    const _limit = limit ? +limit : 20;
+    const _limit = limit ? +limit : 6;
     const _page = page ? +page : 1;
     const skip = (_page - 1) * _limit;
     const totalCount = await ToDoModel.countDocuments();
     const total = Math.ceil(totalCount / _limit);
 
-    const ToDos = await ToDoModel.find(filterObj)
+    const ToDos = await ToDoModel.find(filterBy)
       .sort({ updatedAt: -1 })
       .skip(skip)
       .limit(_limit);
