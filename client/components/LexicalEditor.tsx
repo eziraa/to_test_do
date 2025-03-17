@@ -100,7 +100,7 @@ export default function LexicalEditor({ content = "" }: { content?: string }) {
             <button
               onClick={handleSave}
               disabled={isUpdating}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50"
+              className="px-4 py-2 bg-accent-500/90 text-white rounded-lg hover:bg-accent-500 disabled:opacity-50"
             >
               {isUpdating ? "Saving..." : "Save"}
             </button>
