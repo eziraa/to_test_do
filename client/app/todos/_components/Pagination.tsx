@@ -20,7 +20,7 @@ const Pagination = ({ pagination }: {pagination: IPagination}) => {
             router.push("?"+searchParams.toString());
           }}
           disabled={page <= 1}
-          className="px-2 py-2 text-slate-700 bg-accent-500/90 rounded disabled:bg-accent-500"
+          className="px-2 py-2 text-slate-700 bg-accent-500/90 rounded disabled:bg-gray-500"
         >
           Prev
         </button>

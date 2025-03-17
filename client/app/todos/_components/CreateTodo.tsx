@@ -113,7 +113,7 @@ export default function NewTodoDialog() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="px-4 py-2 text-slate-900 bg-accent-400/90 rounded-lg hover:bg-accent-400 disabled:opacity-50"
+                className="px-4 py-2 text-slate-900 bg-accent-400/90 rounded-lg hover:bg-accent-400 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isLoading ? "Saving..." : "Save"}
               </button>
