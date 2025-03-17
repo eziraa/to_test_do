@@ -124,7 +124,8 @@ export default function Toolbar() {
   }
 
   return (
-    <div className="toolbar" ref={toolbarRef}>
+    <div className="toolbar flex items-start p-1 flex-col sm:flex-row" ref={toolbarRef}>
+      <div className="flex">
       <button
         disabled={!canUndo}
         onClick={() => {
@@ -145,35 +146,6 @@ export default function Toolbar() {
       >
         <i className="format redo" />
       </button>
-      <Divider />
-      <button
-        onClick={() => editor.update(() => toggleBlock('h1'))}
-        data-active={activeBlock === 'h1' ? '' : undefined}
-        className={
-          'toolbar-item spaced ' + (activeBlock === 'h1' ? 'active' : '')
-        }
-      >
-        <i className="format h1" />
-      </button>
-      <button
-        onClick={() => editor.update(() => toggleBlock('h2'))}
-        data-active={activeBlock === 'h2' ? '' : undefined}
-        className={
-          'toolbar-item spaced ' + (activeBlock === 'h2' ? 'active' : '')
-        }
-      >
-        <i className="format h2" />
-      </button>
-      <button
-        onClick={() => editor.update(() => toggleBlock('h3'))}
-        data-active={activeBlock === 'h3' ? '' : undefined}
-        className={
-          'toolbar-item spaced ' + (activeBlock === 'h3' ? 'active' : '')
-        }
-      >
-        <i className="format h3" />
-      </button>
-      <Divider />
       <button
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold');
@@ -199,18 +171,13 @@ export default function Toolbar() {
         className={'toolbar-item spaced ' + (isUnderline ? 'active' : '')}
         aria-label="Format Underline"
       >
-        <i className="format underline" />
+        <i className="format sm:text-base text-sm underline" />
       </button>
-      <button
-        onClick={() => {
-          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough');
-        }}
-        className={'toolbar-item spaced ' + (isStrikethrough ? 'active' : '')}
-        aria-label="Format Strikethrough"
-      >
-        <i className="format strikethrough" />
-      </button>
+      </div>
       <Divider />
+      
+      <div className="flex items-center">
+
       <button
         onClick={() => {
           editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left');
@@ -247,6 +214,7 @@ export default function Toolbar() {
       >
         <i className="format justify-align" />
       </button>{' '}
+      </div>
     </div>
   );
 }

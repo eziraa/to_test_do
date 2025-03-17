@@ -3,7 +3,7 @@
 import { useDeleteTodoMutation } from "@/redux/api/todo.api";
 import { selectTodo } from "@/redux/slices/todo.slice";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
-import {  DeleteIcon, X } from "lucide-react";
+import {  DeleteIcon, Trash2, X } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -42,7 +42,7 @@ export default function DeleteTodoDialog() {
             onClick={() => setIsOpen(true)}
             className="text-red-500 hover:text-red-700"
         >
-            <DeleteIcon size={20} />
+           <Trash2 size={20}/>
         </button>
     
     <div

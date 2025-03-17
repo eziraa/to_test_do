@@ -57,7 +57,7 @@ export default function Sidebar() {
               <button
                 key={todo.id}
                 onClick={() => dispatch(selectTodo(todo))}
-                className={`block relative w-full p-3 text-left rounded-lg transition ${
+                className={`block relative w-full p-3 pt-6 text-left rounded-lg transition ${
                   selectedTodo?.title === todo.title
                     ? "bg-white border-2 border-green-500 shadow-md"
                     : "bg-gray-200 hover:bg-gray-300"
