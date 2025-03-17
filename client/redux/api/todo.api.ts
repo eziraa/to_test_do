@@ -36,8 +36,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
             invalidatesTags: [TodoTagsEnum.TODOS],
         }),
         updateTodo: builder.mutation<ITodo, Partial<ITodo>>({
-            query: ({ id, ...body }) => ({
-                url: `/${id}`,
+            query: ({ _id, ...body }) => ({
+                url: `/${_id}`,
                 method: "PUT",
                 body,
             }),
