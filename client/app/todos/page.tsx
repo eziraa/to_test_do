@@ -12,9 +12,9 @@ export default function Home() {
       <MobileView />
       <div className="sm:flex hidden text-slate-700 flex-col h-screen bg-gray-200">
         <Header />
-        <main className="flex px-14  w-screen p-6">
+        <main className="flex px-14  w-screen p-4 sm:p-6">
           <Sidebar />
-          <div className="flex w-full  flex-col p-4">
+          <div className="flex w-full  flex-col p-2 sm:p-4">
             <SubHeader />
             <TodoDetail />
           </div>

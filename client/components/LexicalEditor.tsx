@@ -73,7 +73,7 @@ export default function LexicalEditor({ content = "" }: { content?: string }) {
       }}
     >
       <div className="border rounded-lg shadow-sm bg-white">
-        <div className="flex items-center text-slate-600">
+        <div className="flex shadow-lg items-center text-slate-600">
           <ToolbarPlugin />
         </div>
         <div className="p-3">
