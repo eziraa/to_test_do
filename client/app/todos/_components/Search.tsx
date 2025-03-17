@@ -32,7 +32,7 @@ const SearchBox = () => {
       search.delete('search');
       router.push("?" + search.toString())
     }
-  }, [debouncedSearchTerm, router]);
+  }, [debouncedSearchTerm,searchParams, router]);
 
   return (
     <div className="flex items-center gap-2">

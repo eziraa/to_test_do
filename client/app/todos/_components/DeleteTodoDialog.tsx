@@ -62,7 +62,7 @@ export default function DeleteTodoDialog() {
 
         {/* Message */}
         <p className="mt-4 text-gray-600">
-          Are you sure you want to delete <strong>"{todo?.title}"</strong>? This action cannot be undone.
+          Are you sure you want to delete <strong>&ldquo;{todo?.title}&ldquo</strong>? This action cannot be undone.
         </p>
 
         {/* Buttons */}

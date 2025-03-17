@@ -10,6 +10,7 @@ import NewTodoDialog from "./CreateTodo";
 import { timeAgo } from "@/utils/date";
 import Pagination from "./Pagination";
 import { useSearchParams } from "next/navigation";
+import Loading from "./Loading";
 export default function Sidebar() {
   const searchParams = useSearchParams();
   const dispatch = useDispatch();
@@ -24,9 +25,7 @@ export default function Sidebar() {
 
   if (isLoading)
     return (
-      <div className="flex items-center justify-center">
-        <Loader size={30} />
-      </div>
+     <Loading />
     );
 
   if (error) {
