@@ -75,6 +75,7 @@ static  async getToDo(req: Request, res: Response) {
         data: newToDo,
       });
     } catch (err) {
+      console.log(err)
       res
         .status(500)
         .json({ status: 'error', message: (err as Error).message });

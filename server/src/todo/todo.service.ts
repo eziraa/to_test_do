@@ -46,6 +46,12 @@ export class ToDosService {
 
   // CREATE ToDo
   static async createToDo(data: IToDo) {
+    const todos = await ToDoModel.find({
+      title: data.title,
+    });
+    if(todos.length > 0) {
+      throw new Error('ToDo already exists');
+    }
     const ToDo = await ToDoModel.create(data);
     return ToDo;
   }
