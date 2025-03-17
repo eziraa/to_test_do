@@ -13,7 +13,7 @@ export default function TodoDetail() {
   const time = new Date(selectedTodo.updatedAt || "").toTimeString();
   return (
     <div className="flex-1 p-3 sm:p-6 bg-white text-slate-700 shadow-lg rounded-lg">
-      <div className="flex flex-col md:flex-row items-start sm:items-center w-full justify-between py-3">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center w-full justify-between py-3">
       <h1 className="text-2xl font-bold">{selectedTodo.title}</h1>
       <p className="text-slate-500 py-1 text-sm">
         Last update at {updatedAt} {time}
