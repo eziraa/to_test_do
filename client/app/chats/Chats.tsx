@@ -7,7 +7,6 @@ import { messages } from "./data";
 
 const ChatBox = () => {
 
-    const theme = "light" 
   useEffect(() => {
     // Add custom scrollbar styles with better mobile support
     const style = document.createElement("style")
@@ -39,12 +38,12 @@ const ChatBox = () => {
       }
       
       .modern-scrollbar::-webkit-scrollbar-thumb {
-        background: ${theme !== "light" ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.1)"};
+        background: ${"rgba(0, 0, 0, 0.1)"};
         border-radius: 20px;
       }
       
       .modern-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: ${theme !== "light" ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.2)"};
+        background: ${"rgba(0, 0, 0, 0.2)"};
       }
     }
   `
@@ -53,7 +52,7 @@ const ChatBox = () => {
     return () => {
       document.head.removeChild(style)
     }
-  }, [theme])
+  }, [])
 
   const [numberOfRows, setNumberOfRows] = useState(1)
 
@@ -89,15 +88,11 @@ const ChatBox = () => {
 
   return (
     <div
-      className={`w-full border  border-slate-500 h-[100%] flex-grow overflow-hidden shadow-lg md:shadow-none gap-2 rounded-xl  md:flex flex-col ${
-        theme !== "light" ? "bg-[#2e2d32] text-white" : "bg-[#f7f8fa] text-black"
-      }`}
+      className={`w-full border   border-red-500 h-[100%] flex-grow overflow-hidden shadow-lg md:shadow-none gap-2 rounded-xl  md:flex flex-col ${ "bg-[#f7f8fa] text-black"}`}
     >
     
       <div
-        className={`flex-1 overflow-x-hidden overflow-y-auto custom-scrollbar md:max-h-[80vh] max-h-[calc(100vh-180px)] h-full md:h-[75vh] rounded-lg p-3 ${
-          theme !== "light" ? "border-gray-700 bg-[#2e2d32]" : "border-gray-300 bg-[#f7f8fa]"
-        }`}
+        className={`flex-1 overflow-x-hidden overflow-y-auto custom-scrollbar md:max-h-[80vh] max-h-[calc(100vh-180px)] h-full md:h-[75vh] rounded-lg p-3 ${"border-gray-300 bg-[#f7f8fa]"}`}
       >
         <div className="h-full  pr-2">
           <div className="space-y-6">
@@ -115,12 +110,8 @@ const ChatBox = () => {
                 <div
                   className={`px-4 relative py-2 rounded-lg text-sm break-words max-w-[85%] ${
                     msg.sender === "user"
-                      ? theme !== "light"
-                        ? "bg-teal-600 text-white"
-                        : "bg-teal-500/90 text-white"
-                      : theme !== "light"
-                        ? "bg-[#202020] text-gray-200"
-                        : "bg-white text-[#121212]"
+                      ? "bg-teal-500/90 text-white"
+                      : "bg-white text-[#121212]"
                   }`}
                 >
                   <div
