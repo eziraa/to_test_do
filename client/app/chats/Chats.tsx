@@ -88,9 +88,9 @@ const ChatBox = () => {
 
   return (
     <div
-      className={`w-full border   border-red-500 h-[100%] flex-grow overflow-hidden shadow-lg md:shadow-none gap-2 rounded-xl  md:flex flex-col ${ "bg-[#f7f8fa] text-black"}`}
+      className={`w-full border   border-slate-500 h-[100%] flex-grow overflow-hidden shadow-lg md:shadow-none gap-2 rounded-xl  md:flex flex-col ${"bg-[#f7f8fa] text-black"}`}
     >
-    
+
       <div
         className={`flex-1 overflow-x-hidden overflow-y-auto custom-scrollbar md:max-h-[80vh] max-h-[calc(100vh-180px)] h-full md:h-[75vh] rounded-lg p-3 ${"border-gray-300 bg-[#f7f8fa]"}`}
       >
@@ -102,26 +102,26 @@ const ChatBox = () => {
                 key={index}
                 className={`flex relative ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
               >
-                {msg.sender !== "user" && msg.imageUrl && (
+                {msg.sender !== "user" && (
                   <div className="flex items-end mb-2">
-                    <img src={msg.imageUrl || "/placeholder.svg"} alt="Bot" className="w-8 h-8 rounded-full mr-2" />
-                  </div>
+                    <span className="w-8 h-8 rounded-full bg-accent-500 flex items-center justify-center text-white text-xl">
+                      {"I"}
+                    </span>                  </div>
                 )}
                 <div
-                  className={`px-4 relative py-2 rounded-lg text-sm break-words max-w-[85%] ${
-                    msg.sender === "user"
+                  className={`px-4 relative py-2 rounded-lg text-sm break-words max-w-[85%] ${msg.sender === "user"
                       ? "bg-teal-500/90 text-white"
                       : "bg-white text-[#121212]"
-                  }`}
+                    }`}
                 >
                   <div
                     className={`font-semibold text-sm ${msg.sender === "user" ? "dark:text-white" : "text-[#121212] dark:text-white"}`}
                   >
-                    { msg.sender}
+                    {msg.sender}
                   </div>
                   <div>
-                    {msg.text }
-                   
+                    {msg.text}
+
                   </div>
                   {msg.text && (
                     <div className={`text-xs ${msg.sender === "user" ? "text-gray-200" : "text-gray-400"}`}>
@@ -132,13 +132,11 @@ const ChatBox = () => {
 
                 {msg.sender === "user" && (
                   <div className="flex ml-2 items-end mb-2">
-                    {msg.imageUrl ? (
-                      <img src={msg.imageUrl || "/placeholder.svg"} alt="User" className="w-8 h-8 rounded-full mr-2" />
-                    ) : (
+                    {
                       <span className="w-8 h-8 rounded-full bg-accent-500 flex items-center justify-center text-white text-xl">
-                        { "U"}
+                        {"U"}
                       </span>
-                    )}
+                    }
                   </div>
                 )}
               </div>

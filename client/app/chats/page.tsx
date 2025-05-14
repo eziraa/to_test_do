@@ -7,7 +7,7 @@ const Page = () => {
     const [input, setInput] = React.useState("");
     const inputRef = React.useRef<HTMLTextAreaElement | null>(null);
     return (
-        <div className="w-full  border border-red-500 overflow-hidden overflow-y-hidden min-h-screen   dark:bg-[#202020] flex flex-col pt-4 sm:pt-8">
+        <div className="w-full  overflow-hidden overflow-y-hidden min-h-screen   dark:bg-[#202020] flex flex-col pt-4 sm:pt-8">
             <main className="flex mt-3.5 overflow-hidden  flex-col md:flex-row flex-grow relative">
 
                 <div
